@@ -1,11 +1,28 @@
+import { useState } from "react";
 
+const List = ({contacts}) => {
 
-import React from 'react'
+  const [filterText, setFilterText] = useState("");
 
-const list = () => {
+  const filtered = contacts.filter((item) => {
+    return Object.keys(item).some((key) => {
+        return item[key].toString().toLowerCase().includes(filterText.toLowerCase());
+    });
+  });
+
   return (
-    <div>list</div>
+    <div>
+      
+      <input type="text" placeholder="Filter contact" value={filterText} onChange={(e) => setFilterText(e.target.value)}
+        />
+
+      <ul>
+        {filtered.map((contact, i) => (
+          <li key={i}>{contact.fullname} </li>
+        ))}
+      </ul>
+    </div>
   )
 }
 
-export default list
+export default List
