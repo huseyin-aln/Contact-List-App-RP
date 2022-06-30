@@ -1,0 +1,12 @@
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 0;
+}
+
+.btn-container > button {
+  padding: 5px;
+  width: 80px;
+  border-radius: 5px;
+  background-color: lightblue;
+}

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import "../style.css";
+import "./Form.css";
 
 const initialFromValues = {fullname: "", phone_number: ""};
 
@@ -45,7 +45,7 @@ const Form = ({addContact, contacts}) => {
         onChange={onChangeInput}/>
       </div>
 
-      <div className="btn">
+      <div className="btn-container">
         <button>Add</button>
       </div>
     </form>
